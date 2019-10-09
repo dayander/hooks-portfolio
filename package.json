@@ -1,0 +1,53 @@
+{
+  "name": "hooks-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node server.js & nodemon --exec babel-node apiServer.js",
+    "styles": "sass ./public/styles/styles.scss ./public/styles/styles.css"
+  },
+  "author": "Anderson Day",
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/core": "^4.3.3",
+    "@material-ui/icons": "^4.2.1",
+    "axios": "^0.19.0",
+    "css-loader": "^3.2.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "final-form": "^4.18.5",
+    "http-proxy": "^1.17.0",
+    "mongoose": "^5.6.11",
+    "nodemailer": "^6.3.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-final-form": "^6.3.0",
+    "react-redux": "^7.1.1",
+    "react-router-dom": "^5.0.1",
+    "redux": "^4.0.4",
+    "redux-form": "^8.2.6",
+    "redux-thunk": "^2.3.0",
+    "regenerator-runtime": "^0.13.3",
+    "style-loader": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.2.2",
+    "eslint-config-prettier": "^6.1.0",
+    "nodemon": "^1.19.1",
+    "prettier": "1.18.2",
+    "redux-logger": "^3.0.6",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
+  }
+}
