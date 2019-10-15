@@ -1,12 +1,16 @@
-import React from 'react'
+import React, {useEffect,  useContext, useState, useReducer } from 'react'
 import PageHeader from '../util/PageHeader'
 import Jumbotron from "../util/Jumbotron";
 import Container from "../util/Container";
-import usePost from '../Hooks/usePost'
-import {useFetch} from '../Hooks/useFetch'
 import ContactForm from "./ContactForm";
 
+import pageRenderA11y from '../util/pageRenderA11y'
+
 function ContactPage() {
+
+  useEffect(() => {
+    pageRenderA11y('Contact')
+  })
     return(
         <React.Fragment>
             <PageHeader

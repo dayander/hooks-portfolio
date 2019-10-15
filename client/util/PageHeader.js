@@ -35,7 +35,7 @@ function PageHeader(props) {
 
 
 PageHeader.propTypes = {
-    imgPath: propTypes.string,
+    img: propTypes.string,
     h1: propTypes.string.isRequired,
     color: propTypes.string
 }

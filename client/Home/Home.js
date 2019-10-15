@@ -4,10 +4,9 @@ import { makeStyles } from '@material-ui/core/styles'
 import PullQuote from "../util/PullQuote"
 import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link';
-import {useFetch} from '../Hooks/useFetch'
 import ProjectSection from './ProjectSection'
 import Context from '../state/context/context'
-//import {useSelector} from 'react-redux'
+import pageRenderA11y from '../util/pageRenderA11y'
 
 
 const useStyles = makeStyles(theme => {
@@ -17,7 +16,9 @@ const useStyles = makeStyles(theme => {
 })
 
 export function Home() {
-  //let projects = useSelector(state => state.projects)
+  useEffect(() => {
+    pageRenderA11y('Portfolio Home')
+  })
   let context = useContext(Context)
     return(
         <React.Fragment>

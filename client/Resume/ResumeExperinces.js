@@ -6,7 +6,8 @@ import List from "../util/List";
 
 const useStyles = makeStyles(theme => ({
     title:{
-        marginBottom: '25px'
+        marginBottom: '25px',
+        marginTop: '25px'
     },
     singleEx: {
         marginBottom: '25px'

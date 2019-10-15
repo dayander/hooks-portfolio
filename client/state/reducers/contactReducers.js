@@ -1,66 +1,37 @@
-"use strict";
+import * as actionTypes from '../actions/actionTypes'
 
-//Cart reducers
-
-
-
-const initialState = {
-
+export const initialState = {
         name: '',
         email: '',
         message:'',
         success: false,
         failed: false,
-
-
+        error: ''
 };
 
-export const contactReducer=(state=initialState, action) =>{
+export const contactReducer=(state, action) =>{
+  console.log(state, action)
 
     switch(action.type) {
-        case "POST_CONTACT":
-
-
-
-
-            return{...state, contact:{
-
-                        name: '',
-                        email:'',
-                        message: '',
-                        success: true,}
-            };
-
-
-        case "SET_FORM_INPUT":
-
-
-
-            if(action.payload.name) {
-
-
-                return {...state, contact: {name: action.payload.name, email: '', message: ''}};
-            }
-
-                //return state.contact.name = action.payload.name;
-            // }else if(action.payload.email){
-            //     return {...state,   contact: { email: action.payload.email}};
-            // }
-            //
-            // else if(this.action.payload.message){
-            //     return {...state,   contact: { message: action.payload.message}};
-            //
-            // }
-
-
-            return {...state, }
-
-
-
-
-
-    };
-    return state
+      case actionTypes.updateFormInput:
+        return {
+          ...state,
+          ...action.payload
+        }
+      case actionTypes.contactSuccess:
+        return{
+          ...state,
+          success: true
+        }
+      case actionTypes.contactFailed:
+        return {
+          ...state,
+          failed: true,
+          error: action.payload
+        }
+      default:
+        return state
+    }
 
 };
 

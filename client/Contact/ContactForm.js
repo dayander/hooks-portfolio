@@ -1,48 +1,76 @@
-import React, {useState} from 'react'
-import { Form, Field } from 'react-final-form'
-import usePost from '../Hooks/usePost'
+import React, { useReducer, useEffect } from 'react'
+import * as ContactFormReducer from "../state/reducers/contactReducers";
+import { updateFormInput } from '../state/actions/contactActions'
+import axios from "axios/index";
+import * as actionTypes from "../state/actions/actionTypes";
+import history from '../util/History'
 
 
 function ContactForm() {
-  const [loading, setLoading] = useState(false)
-  const onSubmit =  values => {
+
+  const onSubmit =  event => {
+    event.preventDefault();
+    event.persist();
+    const contact = {
+      name: event.target.name.value,
+      email: event.target.email.value,
+      message: event.target.message.value
+    }
+
+    axios({
+      method: 'post',
+      url: '/api/contact',
+      data: contact,
+    }).then(response => {
+      dispatch({
+        type: actionTypes.contactSuccess
+      })
+    })
+      .catch(err => {
+        dispatch({
+          type: actionTypes.contactFailed,
+          payload: err
+        })
+      })
+
+
   }
+  const handleuseReducerChange = (event) => (
+    dispatch(updateFormInput({[event.target.name]:event.target.value}))
+  );
+  const [state, dispatch] = useReducer(ContactFormReducer.contactReducer,
+    ContactFormReducer.initialState)
+
+
+  useEffect(() => {
+    if(state.success){
+      history.push('/contact-success')
+    }
+  })
+
 
     return(
-        <Form
-            onSubmit={onSubmit}
-            render={({ handleSubmit, reset, form, submitting, pristine, values }) => (
-              <form onSubmit={handleSubmit}>
-                  <label htmlFor='name'>
-                      Name
-                  </label>
-                  <Field
-                    name='name'
-                    component='input'
-                    type='text'
-                  />
-                <label htmlFor='email'>
-                  Email
-                </label>
-                <Field
-                  name='email'
-                  component='input'
-                  type='email'
-                />
-                <label htmlFor='message'>
-                  Message
-                </label>
-                <Field
-                  name='message'
-                  component='input'
-                  type='textarea'
-                />
-                <button type="submit" disabled={submitting || pristine}>
-                  Submit
-                </button>
-              </form>
-            )}
-        />
+
+       <form onSubmit={onSubmit}>
+         <label htmlFor='name'>
+           Name:
+         </label>
+         <input type='text' name='name' id='name' onChange={handleuseReducerChange} value={state.name}/>
+
+         <label htmlFor='email'>
+           Email:
+         </label>
+         <input type='email' name='email' id='email' onChange={handleuseReducerChange} value={state.email}/>
+
+
+        <label htmlFor='message'> Message: </label>
+         <input type='text' name='message' id='message' value={state.message} onChange={handleuseReducerChange}/>
+
+         <button type='submit'>
+           Submit
+         </button>
+
+       </form>
     )
 }
 

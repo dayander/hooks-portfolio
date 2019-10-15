@@ -7,6 +7,7 @@ import { routes } from './client/routes'
 import { ServerStyleSheets, ThemeProvider } from '@material-ui/styles';
 import { theme } from './client/styles/theme'
 import Context from './client/state/context/context'
+import ContextState from './client/state/context/contextStateConfig'
 
 function handleRender(req, res){
     axios.get('http://localhost:3001/projects')
@@ -19,9 +20,9 @@ function handleRender(req, res){
 
 
             //const store = createStore(reducers, {  "projects": response.data,  "posts":[] } )
-            const initialState = JSON.stringify({  "projects": response.data}).replace(/<\/script/g, '<\\/script').replace(/<!--/g, '<\\!--');
+            const initialState = JSON.stringify({  "projects": response.data, ...ContextState}).replace(/<\/script/g, '<\\/script').replace(/<!--/g, '<\\!--');
             const reactComponent = renderToString(
-                <Context.Provider value={{  "projects": response.data}}>
+                <Context.Provider value={{  "projects": response.data, ...ContextState}}>
                     <StaticRouter location={req.url} context={{}}>
                         { sheets.collect(
                             <ThemeProvider theme={theme}>

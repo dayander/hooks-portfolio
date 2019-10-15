@@ -1,38 +1,37 @@
-"use strict";
+import * as actionTypes from './actionTypes'
 
 import axios from 'axios';
 
-export const postContact = (contact) => {
-            axios({
+
+export const updateFormInput = (input) => {
+  return {
+    type: actionTypes.updateFormInput,
+    payload: input
+  }
+}
+
+export const postContact = (event) => {
+  const contact = {
+    name: event.target.name.value,
+    email: event.target.email.value,
+    message: event.target.message.value
+  }
+            return function(dispatch){
+              axios({
                 method: 'post',
                 url: '/api/contact',
                 data: contact,
-
-            })
-                .then(response => {
-                    return true
+              }).then(response => {
+                console.log('then')
+                dispatch({
+                  type: actionTypes.contactSuccess
                 })
+              })
                 .catch(err => {
-                    return err
+                  dispatch({
+                    type: actionTypes.contactFailed,
+                    payload: err
+                  })
                 })
-    };
-
-
-export const setFormInput = (input) => {
-
-
-    return function(dispatch){
-    dispatch({type: "SET_FORM_INPUT", payload: input});}
+            }
 };
-
-
-
-
-export const sendContactForm = (url, values) => {
-  axios({
-    method: 'POST',
-    url: url,
-    data: values,
-
-  })
-}

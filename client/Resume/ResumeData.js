@@ -1,4 +1,16 @@
 export const experienceArray = [
+  {
+    companyName: 'Target Corporation',
+    jobTitle: 'Software Engineer Intern',
+    location: 'Minneapolis, MN',
+    startDate: 'June 2019',
+    endDate: 'August 2019',
+    bullets: [
+      'Collaborated with a team of 6 in development of GoAlert; An open-source on-call scheduling and alert application saving target $1.5 million per year.',
+      'Performed accessibility audit and remediation of application, integrating automated accessibility testing and accessibility lint package into testing suite to ensure future accessibility of the application.',
+      'Developed full stack solutions with React, GraphQL, Golang and PostgreSQL.',
+    ],
+  },
     {
         companyName: 'Michigan State University',
         jobTitle: 'iOS Design Lab Swift Coach',
@@ -54,6 +66,7 @@ export const skillsArray = [
 ]
 
 export const projectsArray = [
+    'Presenter, Target Corporation BegINNER Con: “Accessibility for Software Engineers” (2019)',
     'Web4All Hackathon, Jupyter Lab Accessibility. (2019)',
     'Presenter, Ignite UX Michigan: “An Introduction to Web Accessibility” (2019)',
     'Presenter, Accessible Learning Conference: “An Introduction to Web Accessibility” (2018), & “The Importance of Accessibility” (2017)',

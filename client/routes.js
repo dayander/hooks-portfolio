@@ -7,6 +7,8 @@ import ResumePage from './Resume/ResumePage'
 import ContactPage from './Contact/ContactPage'
 import Work from './Work/Work'
 import WorkDetails from './Work/WorkDetails'
+import ConferencePresentationPage from './Work/ConferencePresentationPage'
+import ContactSuccess from "./Contact/ContactSuccess";
 
 export const routesObj = [
     {
@@ -34,6 +36,19 @@ export const routesObj = [
         nav: true,
         component: ContactPage,
         path: '/contact'
+    },
+    {
+      name: 'Contact Success',
+      nav: false,
+      component: ContactSuccess,
+      path: '/contact-success'
+    },
+    {
+        name: 'Ignite UX',
+        nav: false,
+        path: '/work/igniteux2019',
+        component: ConferencePresentationPage,
+        exact: true
     },
     {
         name: 'Work Details',

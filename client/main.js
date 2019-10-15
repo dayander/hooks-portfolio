@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import { routes } from './routes'
 import { ThemeProvider } from '@material-ui/styles';
 import Context from './state/context/context'
+import ContextState from './state/context/contextStateConfig'
 import { theme } from "./styles/theme";
+import history from './util/History'
+
 
 
 const initialState = typeof window !== "undefined" && window && window.INITIAL_STATE
@@ -12,12 +15,12 @@ const initialState = typeof window !== "undefined" && window && window.INITIAL_S
 
 export default function App(){
     return(
-        <Context.Provider value={initialState}>
-            <BrowserRouter>
+        <Context.Provider value={{...initialState, ...ContextState()}}>
+            <Router history={history}>
                 <ThemeProvider theme={theme}>
                     {routes}
                 </ThemeProvider>
-            </BrowserRouter>
+            </Router>
         </Context.Provider>
 
     )
