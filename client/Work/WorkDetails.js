@@ -14,8 +14,6 @@ function WorkDetails(props) {
     pageRenderA11y(project.projectName)
   })
 
-  console.log(project)
-
   return (
     <React.Fragment>
       <PageHeader

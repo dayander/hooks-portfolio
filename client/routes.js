@@ -9,6 +9,7 @@ import Work from './Work/Work'
 import WorkDetails from './Work/WorkDetails'
 import ConferencePresentationPage from './Work/ConferencePresentationPage'
 import ContactSuccess from "./Contact/ContactSuccess";
+import SkiHillA11yPage from "./Work/SkiHilA11yPage";
 
 export const routesObj = [
     {
@@ -51,6 +52,13 @@ export const routesObj = [
         exact: true
     },
     {
+        name: 'SkiHill-A11y',
+        nav: false,
+        path: '/work/skihill-a11y',
+        component: SkiHillA11yPage,
+        exact: true
+    },
+    {
         name: 'Work Details',
         nav: false,
         component: WorkDetails,
@@ -65,8 +73,9 @@ const renderRoutes = routesObj.map((x, i) => {
 
 export const routes = (
     <React.Fragment>
+      <a className="screen-reader-text" href="#content">Skip to content</a>
         <Header/>
-        <main id='content'>
+        <main id='content' tabIndex='-1'>
             <Switch>
                 {renderRoutes}
             </Switch>

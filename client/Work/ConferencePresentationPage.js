@@ -5,10 +5,12 @@ import Well from '../util/Well'
 import Jumbotron from '../util/Jumbotron'
 import PullQuote from '../util/PullQuote'
 import Typography from '@material-ui/core/Typography'
+import pageRenderA11y from '../util/pageRenderA11y'
+
 
 function ConferencePresentationPage(props) {
   useEffect(() => {
-    window.scrollTo(0,0)
+    pageRenderA11y(project.companyName)
   })
   const project = useContext(Context).projects.find(x => x.address === props.match.path);
   return(
