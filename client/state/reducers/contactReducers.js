@@ -10,8 +10,6 @@ export const initialState = {
 };
 
 export const contactReducer=(state, action) =>{
-  console.log(state, action)
-
     switch(action.type) {
       case actionTypes.updateFormInput:
         return {
@@ -27,7 +25,7 @@ export const contactReducer=(state, action) =>{
         return {
           ...state,
           failed: true,
-          error: action.payload
+          error: 'There was an error while submitting. Please try again.'
         }
       default:
         return state

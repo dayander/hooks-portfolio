@@ -1,9 +1,9 @@
-import React, {useEffect,  useContext, useState, useReducer } from 'react'
+import React, {useEffect} from 'react'
 import PageHeader from '../util/PageHeader'
 import Jumbotron from "../util/Jumbotron";
 import Container from "../util/Container";
 import ContactForm from "./ContactForm";
-
+import Panel from '../util/Panel'
 import pageRenderA11y from '../util/pageRenderA11y'
 
 function ContactPage() {
@@ -20,14 +20,9 @@ function ContactPage() {
             />
             <Jumbotron>
                 <Container>
-                  {/*<form onSubmit={sendPost} >*/}
-                    {/*<button type='submit' >*/}
-                        {/*try me*/}
-                    {/*</button>*/}
-                  {/*</form>*/}
-
-                  <ContactForm/>
-
+                  <Panel>
+                    <ContactForm/>
+                  </Panel>
                 </Container>
             </Jumbotron>
         </React.Fragment>

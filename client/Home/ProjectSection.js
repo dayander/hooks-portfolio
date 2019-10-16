@@ -12,7 +12,6 @@ const useStyles = makeStyles(theme =>({
 }))
 
 function ProjectSection(props) {
-    console.log(props)
     const {projects} = props
     const classes = useStyles()
 

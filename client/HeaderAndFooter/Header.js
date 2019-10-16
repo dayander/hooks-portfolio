@@ -46,12 +46,13 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-function RenderNavLinks() {
+function RenderNavLinks(props) {
+    const {onClick} = props
 
     const navLinks = routesObj.map((x, i) => {
         if(x.nav){
             return(
-                <ListItem key={i}>
+                <ListItem onClick={onClick} key={i}>
                     <NavLink to={x.path}>
                         {x.name}
                     </NavLink>
@@ -86,7 +87,7 @@ function MobileMenu(props){
             <Drawer classes={{paper: classes.paper}} open={open} onClose={() => setOpen(false)}>
                 <nav>
                     <List className={classes.drawerMobile}>
-                        {RenderNavLinks()}
+                        <RenderNavLinks onClick={() => setOpen(false)}/>
                         <ListItem>
                             <Link  href='https://github.com/dayander'>
                                 <Icon img={'/images/GitHub-Mark-Light-120px-plus.png'} alt={"Anderson Days Github"} />
@@ -113,7 +114,7 @@ function DesktopMenu(){
             </Typography>
             <nav style={{display: 'flex'}} className={classes.alignLeft}>
                 <List style={{display: 'flex'}}>
-                    {RenderNavLinks()}
+                    <RenderNavLinks/>
                 </List>
                 <List style={{display: 'flex'}}>
                     <ListItem>
