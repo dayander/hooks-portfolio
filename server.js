@@ -23,3 +23,6 @@ app.use('/api', function(req, res){
 
 app.get('*', handleRender)
 app.listen(3000,  () => console.log("Static Server listening on port 3000!"));
+
+
+module.exports = app
