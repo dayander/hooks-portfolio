@@ -16,14 +16,6 @@ const initialState = typeof window !== "undefined" && window && window.INITIAL_S
 
 
 export default function App(){
-  React.useEffect(() => {
-    const jssStyles = document.querySelector('#jss-server-side');
-    if (jssStyles) {
-      jssStyles.parentNode.removeChild(jssStyles);
-    }
-  }, []);
-
-
     return(
         <Context.Provider value={{...initialState, ...ContextState()}}>
             <Router history={history}>
