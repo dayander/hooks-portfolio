@@ -3,7 +3,7 @@ const webpack = require('webpack');
 require('regenerator-runtime/runtime')
 
 module.exports = {
-    mode: 'production',
+    mode: 'development',
     entry: ['regenerator-runtime/runtime', './client/main.js'],
     devServer: {
         hot: true
