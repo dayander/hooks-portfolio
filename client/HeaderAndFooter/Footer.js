@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
         padding: '25px',
     },
     footerContent: {
-        margin: '0 auto',
+        margin: '0 auto !important',
         width: '100px'
     }
 }))
