@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel-node server.js & babel-node apiServer.js",
+    "start": "npm run build & node dist/server.js & node dist/apiServer.js",
     "startDev": "nodemon --exec babel-node server.js & nodemon --exec babel-node apiServer.js",
-    "styles": "sass ./public/styles/styles.scss ./public/styles/styles.css"
+    "styles": "sass ./public/styles/styles.scss ./public/styles/styles.css",
+    "build": "babel-node server.js -i dist & babel-node apiServer.js -i dist"
   },
   "author": "Anderson Day",
   "license": "ISC",
