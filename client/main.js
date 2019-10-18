@@ -13,6 +13,8 @@ import history from './util/History'
 const initialState = typeof window !== "undefined" && window && window.INITIAL_STATE
 
 
+
+
 export default function App(){
     return(
         <Context.Provider value={{...initialState, ...ContextState()}}>
