@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
         color: '#fff',
         bottom: 0,
         minHeight: '50px',
-        padding: '25px'
+        padding: '25px',
     },
     footerContent: {
         margin: '0 auto',
