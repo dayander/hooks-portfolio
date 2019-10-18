@@ -1,13 +1,13 @@
 import React from 'react';
 import {renderToString} from 'react-dom/server';
-import App from './client/main'
+import App from '../client/main'
 import axios from 'axios'
 import {StaticRouter} from 'react-router-dom';
-import { routes } from './client/routes'
+import { routes } from '../client/routes'
 import { ServerStyleSheets, ThemeProvider } from '@material-ui/styles';
-import { theme } from './client/styles/theme'
-import Context from './client/state/context/context'
-import ContextState from './client/state/context/contextStateConfig'
+import { theme } from '../client/styles/theme'
+import Context from '../client/state/context/context'
+import ContextState from '../client/state/context/contextStateConfig'
 
 function handleRender(req, res){
     axios.get('http://localhost:3001/projects')

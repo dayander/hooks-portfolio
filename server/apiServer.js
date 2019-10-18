@@ -3,9 +3,9 @@ const mongoose = require('mongoose')
 const nodemailer = require('nodemailer')
 const bodyParser = require('body-parser');
 
-const Contact = require('./models/contact.js')
-const Projects = require('./models/projects.js')
-const Post = require('./models/post.js')
+const Contact = require('../models/contact.js')
+const Projects = require('../models/projects.js')
+const Post = require('../models/post.js')
 
 let  app = express()
 app.use(bodyParser.json());
