@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
     },
     appBar:{
         padding: '10px',
-        backgroundColor: '#000'
+        backgroundColor: '!important #000'
     },
     alignLeft: {
         marginLeft: 'auto'
