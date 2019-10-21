@@ -35,10 +35,10 @@ function SkiHillA11yPage(props) {
             </Typography>
             <Typography component='p'>
               Ski hill a11y is a web application that has two copies of the site that
-              are easily toggled between. The site starts out in accessible and allows
+              are easily toggled between. The site starts out inaccessible and allows
               the user to toggle to the accessible version. I built this as a tool for
               learning web developers to see examples of what makes a site accessible versus
-              in accessible. The application contains errors with heading structure, language
+              inaccessible. The application contains errors with heading structure, language
               of the web page, color contrast, image alternative text, form labels on inputs,
               being able to increase text size, keyboard navigation, semantic lists and updating
               page titles. This project was also presented at the Accessible Learning Conference 2018,
