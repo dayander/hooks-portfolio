@@ -68,7 +68,8 @@ app.get('/projects/:projectName', function(req, res){
 });
 
 app.post('/contact', function(req, res){
-    const contact = req.body;
+    let contact = req.body;
+    contact.date = new Date()
 
     Contact.create(contact, function(err, contact){
         if(err){
@@ -87,7 +88,7 @@ app.post('/contact', function(req, res){
             from: contact.email,
             to: 'dayander@msu.edu',
             subject: 'From Portfolio',
-            text: contact.message
+            text: contact.email + ' ' + contact.message
         };
 
         transporter.sendMail(mailOptions, function(error, info){
