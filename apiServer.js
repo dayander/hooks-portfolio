@@ -2,7 +2,7 @@ const express = require("express")
 const mongoose = require('mongoose')
 const nodemailer = require('nodemailer')
 const bodyParser = require('body-parser');
-
+const emailConfig = require('./config.js')
 const Contact = require('./models/contact.js')
 const Projects = require('./models/projects.js')
 const Post = require('./models/post.js')
@@ -79,8 +79,8 @@ app.post('/contact', function(req, res){
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'andersonday1444@gmail.com',
-                pass: 'aday1444'
+                user: emailConfig.emailConfig.email,
+                pass: emailConfig.emailConfig.pass,
             }
         });
 

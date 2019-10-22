@@ -6,6 +6,8 @@ function PageRenderA11y(pageTitle) {
   if(pageTitle){
     setPageTitle(pageTitle)
   }
+  document.getElementById('app').focus()
+  document.activeElement.blur()
 }
 
 function topScroll() {
