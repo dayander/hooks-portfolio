@@ -7,6 +7,7 @@ function PageRenderA11y(pageTitle) {
     setPageTitle(pageTitle)
   }
   document.getElementById('app').focus()
+  
   document.activeElement.blur()
 }
 
