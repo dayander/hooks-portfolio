@@ -33,7 +33,7 @@ export function Home() {
                     <Link href='http://xa.cal.msu.edu/'> Experience Architecture </Link>
                      at Michigan State University. Being a developer while learning user experience
                     design allows me to create accessible software from the ground up while
-                    communicating ideas to other engineers, designers, and various stake holders.
+                    communicating ideas to other engineers, designers, and various stakeholders.
                 </Typography>
             </PullQuote>
 
