@@ -13,11 +13,9 @@ import SkiHillA11yPage from "./Work/SkiHilA11yPage";
 
 const NotFound = _ =>{
   return (
-    <Status code={404}>
       <div>
         <h2> Sorry, cannot find this page</h2>
       </div>
-    </Status>
   )
 }
 
