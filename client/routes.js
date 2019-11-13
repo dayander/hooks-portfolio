@@ -11,6 +11,16 @@ import ConferencePresentationPage from './Work/ConferencePresentationPage'
 import ContactSuccess from "./Contact/ContactSuccess";
 import SkiHillA11yPage from "./Work/SkiHilA11yPage";
 
+const NotFound = _ =>{
+  return (
+    <Status code={404}>
+      <div>
+        <h2> Sorry, cannot find this page</h2>
+      </div>
+    </Status>
+  )
+}
+
 export const routesObj = [
     {
         name: 'Home',
@@ -78,9 +88,12 @@ export const routes = (
         <main id='content' tabIndex='-1'>
             <Switch>
                 {renderRoutes}
+
+                <Route component={NotFound} />
             </Switch>
         </main>
         <Footer/>
     </React.Fragment>
 );
+
 

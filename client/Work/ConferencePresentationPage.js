@@ -24,7 +24,18 @@ function ConferencePresentationPage(props) {
             </Typography>
             <br/>
             <Typography component='p' variant='subtitle1'>
-              In March of 2019 I had the opportunity to present at Ignite UX Michigan
+              In March of 2019 I had the opportunity to present at Ignite UX Michigan. Ignite UX Michigan is a conference in Ann Arbor, Michigan.
+              Each Ignite Talk is a 5 minute talk with topics ranging from User Experience Design and User Experience Research.
+            </Typography>
+          </PullQuote>
+
+          <PullQuote>
+            <Typography component='h2' variant='h3'>
+              My Presentation
+            </Typography>
+            <br/>
+            <Typography component='p' variant='subtitle1'>
+              The presentation I gave at Ignite UX is focused on Accessibility. I covered WebAIM's Research of the top accessibility errors on the webs most visited pages.
             </Typography>
           </PullQuote>
           <div className={'video-container'}>
