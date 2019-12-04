@@ -38,7 +38,7 @@ function ProjectLink(props) {
     return(
         <Link className={classes.overlayEffect} to={`/work${getter}`}>
             <div className={classes.project} style={{backgroundImage: `url(${bgImage})`}}>
-                <div className={`${classes.project} ${classes.content}`}>
+                <div className={`${classes.content}`}>
                     <h2 component='h2' variant='h4'>
                         {companyName}
                     </h2>
